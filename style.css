@@ -1,0 +1,57 @@
+:root {
+  --bg: #ffffff;
+  --text: #000000;
+  --accent: #0077cc;
+}
+
+[data-theme="dark"] {
+  --bg: #121212;
+  --text: #ffffff;
+  --accent: #66b2ff;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+header {
+  background: var(--accent);
+  padding: 1rem;
+}
+
+nav a, nav button {
+  margin-right: 1rem;
+  color: #fff;
+  text-decoration: none;
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+nav a:hover, nav button:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 2rem;
+}
+
+.profile-pic {
+  max-width: 200px;
+  border-radius: 50%;
+  margin-top: 1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  background: var(--accent);
+  color: #fff;
+}
