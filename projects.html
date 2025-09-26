@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Projects - Conk</title>
+  <title>Projects - Cole Mullenbach</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,21 +11,31 @@
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="projects.html">Projects</a>
+      <a href="resume.html">Resume</a>
       <button id="theme-toggle">Toggle Theme</button>
     </nav>
   </header>
 
   <main>
     <h1>Projects</h1>
-    <ul>
-      <li><strong>Homelab Setup:</strong> Running Proxmox, TrueNAS, and OPNsense.</li>
-      <li><strong>Automation:</strong> Building workflows with n8n and Postgres.</li>
-      <li><strong>Web Hosting:</strong> Secure personal site on GitHub Pages.</li>
-    </ul>
+    <div class="grid">
+      <article class="card">
+        <h2>Homelab Setup</h2>
+        <p class="muted">Proxmox, TrueNAS, and OPNsense powering my self-hosted stack.</p>
+      </article>
+      <article class="card">
+        <h2>Automation</h2>
+        <p class="muted">Event-driven workflows with n8n orchestrating Postgres-backed tasks.</p>
+      </article>
+      <article class="card">
+        <h2>Web Hosting</h2>
+        <p class="muted">Hardened static hosting via GitHub Pages with CI for deploys.</p>
+      </article>
+    </div>
   </main>
 
   <footer>
-    <p>&copy; 2025 Conk</p>
+    <p>&copy; 2025 Cole Mullenbach</p>
   </footer>
 
   <script src="script.js"></script>
