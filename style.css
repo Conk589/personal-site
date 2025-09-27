@@ -1,4 +1,20 @@
 :root {
+  /* Fallback colors - will be overridden by theme selectors */
+  --bg: #0f0f0f;
+  --surface: #1a1a1a;
+  --muted-surface: #262626;
+  --text: #ffffff;
+  --text-muted: #a3a3a3;
+  --accent: #3b82f6;
+  --accent-contrast: #ffffff;
+  --ring: rgba(59, 130, 246, 0.3);
+
+  /* Typography & radius */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  --radius: 12px;
+}
+
+[data-theme="dark"] {
   /* Default theme - Modern Dark */
   --bg: #0f0f0f;
   --surface: #1a1a1a;
@@ -8,10 +24,6 @@
   --accent: #3b82f6; /* blue-500 */
   --accent-contrast: #ffffff;
   --ring: rgba(59, 130, 246, 0.3);
-
-  /* Typography & radius */
-  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-  --radius: 12px;
 }
 
 [data-theme="light"] {
