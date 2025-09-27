@@ -19,41 +19,136 @@
   <main>
     <h1>My Resume</h1>
 
-    <section>
+    <section class="download-section">
       <p>
-        You can <a href="assets/resume.pdf" download>download my résumé (PDF)</a> 
-        or view a quick version below:
+        You can <a href="assets/resume.pdf" download class="button">Download PDF Resume</a> 
+        or view the full version below:
       </p>
     </section>
 
     <section class="resume">
-      <h2>Cole Mullenbach</h2>
-      <p><strong>Software Engineer</strong></p>
-      <p>Email: your.email@example.com</p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
-      <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+      <div class="resume-header">
+        <h2>Cole Mullenbach</h2>
+        <p class="job-title">Software Engineer & Automation Engineer</p>
+        <div class="contact-info">
+          <div class="contact-item">
+            <strong>Email:</strong> colemullenbach@gmail.com
+          </div>
+          <div class="contact-item">
+            <strong>Location:</strong> Lincoln Park, MI • Available for remote work
+          </div>
+          <div class="contact-item">
+            <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/cole-mullenbach" target="_blank">cole-mullenbach</a>
+          </div>
+          <div class="contact-item">
+            <strong>GitHub:</strong> <a href="https://github.com/Conk589" target="_blank">Conk589</a>
+          </div>
+        </div>
+      </div>
 
-      <h3>Experience</h3>
-      <ul>
-        <li><strong>Excel Engineering</strong> — Software Engineer (2024–Present)  
-            Developing tools for CAN bus analysis and automation pipelines.</li>
-        <li><strong>Army National Guard</strong> — Infantry Mortar Section Leader  
-            Led a team of 4 in field operations and precision deployment.</li>
-      </ul>
+      <div class="resume-section">
+        <h3>Professional Summary</h3>
+        <p>
+          Software Engineer specializing in diesel emissions testing and automation with a passion for 
+          building customized solutions that people actually love to use. Experienced in bridging the gap 
+          between technical complexity and user experience, with expertise in Python, MATLAB, SQL, and 
+          Linux server administration. Known for knowing when to ship fast and iterate vs. when to get it perfect.
+        </p>
+      </div>
 
-      <h3>Projects</h3>
-      <ul>
-        <li>Proxmox & TrueNAS homelab for virtualized services</li>
-        <li>Custom automation with n8n and Postgres</li>
-        <li>Secure local web services with pfSense firewalling</li>
-      </ul>
+      <div class="resume-section">
+        <h3>Education</h3>
+        <div class="education-item">
+          <h4>Iowa State University</h4>
+          <p class="education-dates">Graduated</p>
+          <p>Bachelor's Degree in Computer Science/Engineering</p>
+        </div>
+      </div>
 
-      <h3>Skills</h3>
-      <ul>
-        <li>Python, MATLAB, SQL, HTML/CSS/JS</li>
-        <li>Linux server administration</li>
-        <li>Containerization & virtualization (Proxmox, Docker)</li>
-      </ul>
+      <div class="resume-section">
+        <h3>Professional Experience</h3>
+        <div class="experience-item">
+          <h4>Excel Engineering — Software Engineer</h4>
+          <p class="experience-dates">2024 – Present</p>
+          <ul>
+            <li>Develop tools for CAN bus analysis and automation pipelines</li>
+            <li>Create customized solutions for diesel emissions testing</li>
+            <li>Bridge technical complexity with user-friendly interfaces</li>
+            <li>Collaborate with cross-functional teams to deliver reliable systems</li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <h4>Army National Guard — Infantry Mortar Squad Leader</h4>
+          <p class="experience-dates">Previous Service</p>
+          <ul>
+            <li>Led a team of 4 in field operations and precision deployment</li>
+            <li>Developed leadership skills in high-pressure environments</li>
+            <li>Managed mission-critical operations with attention to detail</li>
+            <li>Demonstrated clear communication and team dynamics expertise</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="resume-section">
+        <h3>Technical Skills</h3>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h4>Programming Languages</h4>
+            <p>Python, MATLAB, Java, Kotlin, SQL, HTML5/CSS3/JavaScript, Bash</p>
+          </div>
+          <div class="skill-category">
+            <h4>Systems & Infrastructure</h4>
+            <p>Linux server administration, Proxmox, TrueNAS, Docker, OPNsense</p>
+          </div>
+          <div class="skill-category">
+            <h4>Web Development</h4>
+            <p>Responsive Design, GitHub Pages, CI/CD, SSL/TLS, REST APIs</p>
+          </div>
+          <div class="skill-category">
+            <h4>Automation & Data</h4>
+            <p>n8n automation, PostgreSQL, CAN-BUS analysis, Data Analysis</p>
+          </div>
+          <div class="skill-category">
+            <h4>Mobile & Frameworks</h4>
+            <p>Android development, Spring Boot, Database Design</p>
+          </div>
+          <div class="skill-category">
+            <h4>3D Design & Printing</h4>
+            <p>Fusion 360, Cura, Orca Slicer, CAD Design, 3D Printing</p>
+          </div>
+          <div class="skill-category">
+            <h4>Specializations</h4>
+            <p>Diesel emissions testing, automation pipelines, homelab management</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="resume-section">
+        <h3>Notable Projects</h3>
+        <div class="project-item">
+          <h4>Proxmox & TrueNAS Homelab</h4>
+          <p>Self-hosted infrastructure running virtualized services with automated backups and monitoring</p>
+        </div>
+        <div class="project-item">
+          <h4>Custom Automation Workflows</h4>
+          <p>Built event-driven workflows using n8n orchestrating Postgres-backed tasks for data processing</p>
+        </div>
+        <div class="project-item">
+          <h4>Secure Web Services</h4>
+          <p>Deployed hardened static hosting via GitHub Pages with CI/CD pipelines and pfSense firewalling</p>
+        </div>
+      </div>
+
+      <div class="resume-section">
+        <h3>Personal Interests & Values</h3>
+        <p>
+          When not coding, you'll find me at the pool table, disc golf course, or trying to explain to my buddies 
+          why I can't tell if this button is red or green (thanks, colorblindness). I'm passionate about music 
+          across all genres and attend Lost Lands music festival annually. My goal is to eventually start a business 
+          where employees are genuinely happy, fairly compensated, and excited about their work.
+        </p>
+      </div>
     </section>
   </main>
 
