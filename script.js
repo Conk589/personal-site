@@ -1,22 +1,20 @@
-// Theme toggle
-const toggleBtn = document.getElementById("theme-toggle");
+// Theme selector
+const themeSelector = document.getElementById("theme-selector");
 
 function applyTheme(theme) {
   document.body.dataset.theme = theme;
   localStorage.setItem("theme", theme);
-  if (toggleBtn) {
-    toggleBtn.setAttribute("aria-label", theme === "light" ? "Switch to dark theme" : "Switch to light theme");
-    toggleBtn.textContent = theme === "light" ? "Dark Mode" : "Light Mode";
+  if (themeSelector) {
+    themeSelector.value = theme;
   }
 }
 
-if (toggleBtn) {
-  toggleBtn.addEventListener("click", () => {
-    const current = document.body.dataset.theme || "light";
-    applyTheme(current === "dark" ? "light" : "dark");
+if (themeSelector) {
+  themeSelector.addEventListener("change", (e) => {
+    applyTheme(e.target.value);
   });
 }
 
 // Load saved theme on page load
-const saved = localStorage.getItem("theme") || "light";
+const saved = localStorage.getItem("theme") || "dark";
 applyTheme(saved);
