@@ -27,185 +27,214 @@
     </nav>
   </header>
 
-  <main>
-    <h1>My Projects</h1>
-    <p class="projects-intro">
-      A collection of technical projects showcasing my skills in software engineering, 
-      automation, infrastructure, and 3D design. Each project represents a unique 
-      challenge solved with practical, user-focused solutions.
-    </p>
-
-    <div class="projects-grid">
-      <article class="project-card featured">
-        <div class="project-header">
-          <h2>🏠 Proxmox Homelab Infrastructure</h2>
-        </div>
-        <p class="project-description">
-          Self-hosted infrastructure running virtualized services with automated backups, 
-          monitoring, and secure networking. Powers everything from development environments 
-          to media servers.
+  <main class="scroll-container">
+    <!-- Hero Section -->
+    <section class="project-hero">
+      <div class="hero-content">
+        <h1>My Projects</h1>
+        <p class="projects-intro">
+          A collection of technical projects showcasing my skills in software engineering, 
+          automation, infrastructure, and 3D design. Each project represents a unique 
+          challenge solved with practical, user-focused solutions.
         </p>
-        <div class="project-tech">
-          <span class="tech-tag">Proxmox</span>
-          <span class="tech-tag">TrueNAS</span>
-          <span class="tech-tag">OPNsense</span>
-          <span class="tech-tag">Docker</span>
-          <span class="tech-tag">Linux</span>
+        <div class="scroll-indicator">
+          <span>Scroll to explore</span>
+          <div class="scroll-arrow">↓</div>
         </div>
-        <div class="project-features">
-          <h4>Key Features:</h4>
-          <ul>
-            <li>Automated VM backups with retention policies</li>
-            <li>Network segmentation and firewall rules</li>
-            <li>Resource monitoring and alerting</li>
-            <li>High availability storage with ZFS</li>
-          </ul>
-        </div>
-      </article>
+      </div>
+    </section>
 
-      <article class="project-card">
-        <div class="project-header">
-          <h2>⚙️ Custom Automation Workflows</h2>
-          <span class="project-status">Active</span>
+    <!-- Project Sections -->
+    <div class="projects-fullscreen">
+      <section class="project-section featured" data-project="proxmox">
+        <div class="project-background"></div>
+        <div class="project-content">
+          <div class="project-header">
+            <h2>🏠 Proxmox Homelab Infrastructure</h2>
+            <span class="project-status">Featured</span>
+          </div>
+          <p class="project-description">
+            Self-hosted infrastructure running virtualized services with automated backups, 
+            monitoring, and secure networking. Powers everything from development environments 
+            to media servers.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Proxmox</span>
+            <span class="tech-tag">TrueNAS</span>
+            <span class="tech-tag">OPNsense</span>
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">Linux</span>
+          </div>
+          <div class="project-features">
+            <h4>Key Features:</h4>
+            <ul>
+              <li>Automated VM backups with retention policies</li>
+              <li>Network segmentation and firewall rules</li>
+              <li>Resource monitoring and alerting</li>
+              <li>High availability storage with ZFS</li>
+            </ul>
+          </div>
         </div>
-        <p class="project-description">
-          Event-driven automation system using n8n to orchestrate complex workflows 
-          with Postgres database integration for data processing and task management.
-        </p>
-        <div class="project-tech">
-          <span class="tech-tag">n8n</span>
-          <span class="tech-tag">PostgreSQL</span>
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">REST APIs</span>
-        </div>
-        <div class="project-features">
-          <h4>Automations:</h4>
-          <ul>
-            <li>Data pipeline orchestration</li>
-            <li>Automated report generation</li>
-            <li>System health monitoring</li>
-            <li>File processing workflows</li>
-          </ul>
-        </div>
-      </article>
+      </section>
 
-      <article class="project-card">
-        <div class="project-header">
-          <h2>🎯 Personal Website & Portfolio</h2>
-          <span class="project-status">Active</span>
+      <section class="project-section" data-project="automation">
+        <div class="project-background"></div>
+        <div class="project-content">
+          <div class="project-header">
+            <h2>⚙️ Custom Automation Workflows</h2>
+            <span class="project-status">Active</span>
+          </div>
+          <p class="project-description">
+            Event-driven automation system using n8n to orchestrate complex workflows 
+            with Postgres database integration for data processing and task management.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">n8n</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">REST APIs</span>
+          </div>
+          <div class="project-features">
+            <h4>Automations:</h4>
+            <ul>
+              <li>Data pipeline orchestration</li>
+              <li>Automated report generation</li>
+              <li>System health monitoring</li>
+              <li>File processing workflows</li>
+            </ul>
+          </div>
         </div>
-        <p class="project-description">
-          This very website! A showcase of modern web development practices with responsive 
-          design, dark mode theming, and clean architecture. Built to demonstrate both 
-          technical skills and attention to user experience.
-        </p>
-        <div class="project-tech">
-          <span class="tech-tag">HTML5</span>
-          <span class="tech-tag">CSS3</span>
-          <span class="tech-tag">JavaScript</span>
-          <span class="tech-tag">Responsive Design</span>
-          <span class="tech-tag">GitHub Pages</span>
-          <span class="tech-tag">CI/CD</span>
-          <span class="tech-tag">SSL/TLS</span>
-        </div>
-        <div class="project-features">
-          <h4>Features:</h4>
-          <ul>
-            <li>Dark/light theme toggle</li>
-            <li>Mobile-responsive design</li>
-            <li>Clean, professional layout</li>
-            <li>Fast loading and optimized</li>
-            <li>Automated deployment pipelines</li>
-            <li>Security headers and CSP policies</li>
-          </ul>
-        </div>
-      </article>
+      </section>
 
-      <article class="project-card">
-        <div class="project-header">
-          <h2>🖨️ 3D Printing & Design Projects</h2>
-          <span class="project-status">Ongoing</span>
+      <section class="project-section" data-project="website">
+        <div class="project-background"></div>
+        <div class="project-content">
+          <div class="project-header">
+            <h2>🎯 Personal Website & Portfolio</h2>
+            <span class="project-status">Active</span>
+          </div>
+          <p class="project-description">
+            This very website! A showcase of modern web development practices with responsive 
+            design, dark mode theming, and clean architecture. Built to demonstrate both 
+            technical skills and attention to user experience.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Responsive Design</span>
+            <span class="tech-tag">GitHub Pages</span>
+            <span class="tech-tag">CI/CD</span>
+            <span class="tech-tag">SSL/TLS</span>
+          </div>
+          <div class="project-features">
+            <h4>Features:</h4>
+            <ul>
+              <li>Dark/light theme toggle</li>
+              <li>Mobile-responsive design</li>
+              <li>Clean, professional layout</li>
+              <li>Fast loading and optimized</li>
+              <li>Automated deployment pipelines</li>
+              <li>Security headers and CSP policies</li>
+            </ul>
+          </div>
         </div>
-        <p class="project-description">
-          Custom 3D modeling and printing projects for practical solutions around the house 
-          and workshop. From functional parts to creative designs, combining technical skills 
-          with hands-on problem solving.
-        </p>
-        <div class="project-tech">
-          <span class="tech-tag">Fusion 360</span>
-          <span class="tech-tag">Cura</span>
-          <span class="tech-tag">Orca Slicer</span>
-          <span class="tech-tag">CAD Design</span>
-          <span class="tech-tag">3D Printing</span>
-        </div>
-        <div class="project-features">
-          <h4>Project Types:</h4>
-          <ul>
-            <li>Custom brackets and mounting solutions</li>
-            <li>Organizational tools and storage</li>
-            <li>Prototype parts for other projects</li>
-            <li>Creative decorative pieces</li>
-          </ul>
-        </div>
-      </article>
+      </section>
 
-      <article class="project-card">
-        <div class="project-header">
-          <h2>🔧 Diesel Emissions Testing Tools</h2>
-          <span class="project-status">Professional</span>
+      <section class="project-section" data-project="3dprinting">
+        <div class="project-background"></div>
+        <div class="project-content">
+          <div class="project-header">
+            <h2>🖨️ 3D Printing & Design Projects</h2>
+            <span class="project-status">Ongoing</span>
+          </div>
+          <p class="project-description">
+            Custom 3D modeling and printing projects for practical solutions around the house 
+            and workshop. From functional parts to creative designs, combining technical skills 
+            with hands-on problem solving.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Fusion 360</span>
+            <span class="tech-tag">Cura</span>
+            <span class="tech-tag">Orca Slicer</span>
+            <span class="tech-tag">CAD Design</span>
+            <span class="tech-tag">3D Printing</span>
+          </div>
+          <div class="project-features">
+            <h4>Project Types:</h4>
+            <ul>
+              <li>Custom brackets and mounting solutions</li>
+              <li>Organizational tools and storage</li>
+              <li>Prototype parts for other projects</li>
+              <li>Creative decorative pieces</li>
+            </ul>
+          </div>
         </div>
-        <p class="project-description">
-          Custom software tools for CAN bus analysis and automation pipelines in diesel 
-          emissions testing. Bridging complex technical requirements with user-friendly interfaces.
-        </p>
-        <div class="project-tech">
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">MATLAB</span>
-          <span class="tech-tag">Bash</span>
-          <span class="tech-tag">CAN-BUS</span>
-          <span class="tech-tag">Data Analysis</span>
-        </div>
-        <div class="project-features">
-          <h4>Capabilities:</h4>
-          <ul>
-            <li>Real-time CAN bus data processing</li>
-            <li>Automated test sequence generation</li>
-            <li>Data visualization and reporting</li>
-            <li>Integration with existing test equipment</li>
-          </ul>
-        </div>
-      </article>
+      </section>
 
-      <article class="project-card">
-        <div class="project-header">
-          <h2>🎓 Academic & Learning Projects</h2>
-          <span class="project-status">Completed</span>
+      <section class="project-section" data-project="emissions">
+        <div class="project-background"></div>
+        <div class="project-content">
+          <div class="project-header">
+            <h2>🔧 Diesel Emissions Testing Tools</h2>
+            <span class="project-status">Professional</span>
+          </div>
+          <p class="project-description">
+            Custom software tools for CAN bus analysis and automation pipelines in diesel 
+            emissions testing. Bridging complex technical requirements with user-friendly interfaces.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">MATLAB</span>
+            <span class="tech-tag">Bash</span>
+            <span class="tech-tag">CAN-BUS</span>
+            <span class="tech-tag">Data Analysis</span>
+          </div>
+          <div class="project-features">
+            <h4>Capabilities:</h4>
+            <ul>
+              <li>Real-time CAN bus data processing</li>
+              <li>Automated test sequence generation</li>
+              <li>Data visualization and reporting</li>
+              <li>Integration with existing test equipment</li>
+            </ul>
+          </div>
         </div>
-        <p class="project-description">
-          Various projects and applications developed during academic coursework at Iowa State University, showcasing 
-          skills learned in formal education settings. These projects demonstrate foundational 
-          programming concepts and modern development frameworks.
-        </p>
-        <div class="project-tech">
-          <span class="tech-tag">Spring Boot</span>
-          <span class="tech-tag">Android</span>
-          <span class="tech-tag">Java</span>
-          <span class="tech-tag">Kotlin</span>
-          <span class="tech-tag">REST APIs</span>
-          <span class="tech-tag">Database Design</span>
+      </section>
+
+      <section class="project-section" data-project="academic">
+        <div class="project-background"></div>
+        <div class="project-content">
+          <div class="project-header">
+            <h2>🎓 Academic & Learning Projects</h2>
+            <span class="project-status">Completed</span>
+          </div>
+          <p class="project-description">
+            Various projects and applications developed during academic coursework at Iowa State University, showcasing 
+            skills learned in formal education settings. These projects demonstrate foundational 
+            programming concepts and modern development frameworks.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Spring Boot</span>
+            <span class="tech-tag">Android</span>
+            <span class="tech-tag">Java</span>
+            <span class="tech-tag">Kotlin</span>
+            <span class="tech-tag">REST APIs</span>
+            <span class="tech-tag">Database Design</span>
+          </div>
+          <div class="project-features">
+            <h4>Project Types:</h4>
+            <ul>
+              <li>Full-stack web applications with Spring Boot</li>
+              <li>Android mobile app development</li>
+              <li>RESTful API design and implementation</li>
+              <li>Database schema design and optimization</li>
+              <li>Object-oriented programming principles</li>
+              <li>Software engineering best practices</li>
+            </ul>
+          </div>
         </div>
-        <div class="project-features">
-          <h4>Project Types:</h4>
-          <ul>
-            <li>Full-stack web applications with Spring Boot</li>
-            <li>Android mobile app development</li>
-            <li>RESTful API design and implementation</li>
-            <li>Database schema design and optimization</li>
-            <li>Object-oriented programming principles</li>
-            <li>Software engineering best practices</li>
-          </ul>
-        </div>
-      </article>
+      </section>
     </div>
   </main>
 
