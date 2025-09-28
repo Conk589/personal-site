@@ -196,7 +196,7 @@ p {
 
 .profile-pic {
   max-width: 180px;
-  border-radius: 50%;
+  border-radius: 20px;
   margin-top: 1rem;
   box-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
