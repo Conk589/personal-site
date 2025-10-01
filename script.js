@@ -155,22 +155,39 @@ function initAboutPage() {
     horizontalNav.style.pointerEvents = 'none';
   }
   
-  // Show navigation when horizontal area is visible using window scroll
-  function checkScrollPosition() {
-    if (aboutFullscreen && horizontalNav) {
-      const rect = aboutFullscreen.getBoundingClientRect();
-      const isVisible = rect.top <= window.innerHeight * 0.5 && rect.bottom >= window.innerHeight * 0.5;
-      
-      if (isVisible) {
-        horizontalNav.style.opacity = '1';
-        horizontalNav.style.pointerEvents = 'auto';
-        horizontalNav.style.transition = 'opacity 0.5s ease';
-      } else {
-        horizontalNav.style.opacity = '0';
-        horizontalNav.style.pointerEvents = 'none';
-      }
-    }
-  }
+          // Show navigation when horizontal area is visible using window scroll
+          function checkScrollPosition() {
+            if (aboutFullscreen && horizontalNav) {
+              const rect = aboutFullscreen.getBoundingClientRect();
+              const isVisible = rect.top <= window.innerHeight * 0.5 && rect.bottom >= window.innerHeight * 0.5;
+              
+              // Get scroll indicator
+              const scrollIndicator = document.querySelector('.scroll-indicator');
+              
+              if (isVisible) {
+                horizontalNav.style.opacity = '1';
+                horizontalNav.style.pointerEvents = 'auto';
+                horizontalNav.style.transition = 'opacity 0.5s ease';
+                
+                // Hide scroll indicator when horizontal nav is visible
+                if (scrollIndicator) {
+                  scrollIndicator.style.opacity = '0';
+                  scrollIndicator.style.pointerEvents = 'none';
+                  scrollIndicator.style.transition = 'opacity 0.5s ease';
+                }
+              } else {
+                horizontalNav.style.opacity = '0';
+                horizontalNav.style.pointerEvents = 'none';
+                
+                // Show scroll indicator when horizontal nav is hidden
+                if (scrollIndicator) {
+                  scrollIndicator.style.opacity = '1';
+                  scrollIndicator.style.pointerEvents = 'auto';
+                  scrollIndicator.style.transition = 'opacity 0.5s ease';
+                }
+              }
+            }
+          }
   
   // Listen to window scroll instead of container scroll
   window.addEventListener('scroll', checkScrollPosition);
@@ -206,6 +223,33 @@ function initProjectsPage() {
   projectSections.forEach(section => {
     observer.observe(section);
   });
+
+  // Hide scroll indicator when near bottom of page
+  function checkProjectsScrollPosition() {
+    const scrollIndicator = document.querySelector('.projects-container .scroll-indicator');
+    if (!scrollIndicator) return;
+
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight;
+    const clientHeight = window.innerHeight;
+    
+    // Hide scroll indicator when within 200px of bottom
+    const distanceFromBottom = scrollHeight - scrollTop - clientHeight;
+    
+    if (distanceFromBottom < 200) {
+      scrollIndicator.style.opacity = '0';
+      scrollIndicator.style.pointerEvents = 'none';
+      scrollIndicator.style.transition = 'opacity 0.5s ease';
+    } else {
+      scrollIndicator.style.opacity = '1';
+      scrollIndicator.style.pointerEvents = 'auto';
+      scrollIndicator.style.transition = 'opacity 0.5s ease';
+    }
+  }
+
+  // Listen for scroll events
+  window.addEventListener('scroll', checkProjectsScrollPosition);
+  checkProjectsScrollPosition(); // Initial check
 }
 
 // Initialize projects page when DOM is loaded

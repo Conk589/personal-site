@@ -786,13 +786,20 @@ footer {
 }
 
 .scroll-indicator {
-  position: absolute;
+  position: fixed;
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
   color: var(--text-muted);
   animation: bounce 2s infinite;
+  z-index: 10;
+  background: rgba(var(--surface-rgb), 0.9);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .scroll-arrow {
@@ -1212,6 +1219,134 @@ body::-webkit-scrollbar-thumb:hover {
 body {
   scrollbar-width: thin;
   scrollbar-color: var(--accent) var(--muted-surface);
+}
+
+/* Liquid Background Animation */
+.liquid-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.liquid-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.1;
+  animation: liquidFloat 20s infinite ease-in-out;
+}
+
+.liquid-blob:nth-child(1) {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(45deg, var(--accent), var(--text-muted));
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+  animation-duration: 25s;
+}
+
+.liquid-blob:nth-child(2) {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, var(--accent), var(--bg));
+  top: 60%;
+  right: 10%;
+  animation-delay: -5s;
+  animation-duration: 30s;
+}
+
+.liquid-blob:nth-child(3) {
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(225deg, var(--text-muted), var(--accent));
+  bottom: 20%;
+  left: 20%;
+  animation-delay: -10s;
+  animation-duration: 35s;
+}
+
+.liquid-blob:nth-child(4) {
+  width: 350px;
+  height: 350px;
+  background: linear-gradient(315deg, var(--bg), var(--text-muted));
+  top: 30%;
+  right: 30%;
+  animation-delay: -15s;
+  animation-duration: 28s;
+}
+
+.liquid-blob:nth-child(5) {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(180deg, var(--accent), var(--bg));
+  bottom: 10%;
+  right: 20%;
+  animation-delay: -20s;
+  animation-duration: 32s;
+}
+
+@keyframes liquidFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(100px, -50px) scale(1.1);
+  }
+  50% {
+    transform: translate(-50px, 100px) scale(0.9);
+  }
+  75% {
+    transform: translate(-100px, -25px) scale(1.05);
+  }
+}
+
+/* Enhanced main content for liquid background */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  background: rgba(var(--surface-rgb), 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius);
+  padding: 2rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Responsive adjustments for liquid background */
+@media (max-width: 768px) {
+  .liquid-blob {
+    filter: blur(30px);
+  }
+  
+  .liquid-blob:nth-child(1) {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .liquid-blob:nth-child(2) {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .liquid-blob:nth-child(3) {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .liquid-blob:nth-child(4) {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .liquid-blob:nth-child(5) {
+    width: 150px;
+    height: 150px;
+  }
 }
 
 /* Projects Page with Single Scrollbar and Snap Animation */
