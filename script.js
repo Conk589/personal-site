@@ -254,3 +254,68 @@ function initProjectsPage() {
 
 // Initialize projects page when DOM is loaded
 document.addEventListener('DOMContentLoaded', initProjectsPage);
+
+// Side Navigation Functionality for Projects Page
+function initSideNavigation() {
+  const sideNav = document.querySelector('.side-navigation');
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelectorAll('.nav-list a');
+  const projectSections = document.querySelectorAll('.project-section');
+  
+  if (!sideNav || !navToggle) return;
+
+  // Start collapsed
+  sideNav.classList.add('collapsed');
+  
+  // Toggle expand/collapse
+  navToggle.addEventListener('click', () => {
+    sideNav.classList.toggle('collapsed');
+    sideNav.classList.toggle('expanded');
+  });
+
+  // Handle navigation clicks
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const projectId = link.getAttribute('data-project');
+      const targetSection = document.querySelector(`[data-project="${projectId}"]`);
+      
+      if (targetSection) {
+        targetSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+        
+        // Update active link
+        navLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      }
+    });
+  });
+
+  // Update active link based on scroll position
+  function updateActiveLink() {
+    const scrollPos = window.pageYOffset + window.innerHeight / 2;
+    
+    projectSections.forEach((section, index) => {
+      const sectionTop = section.offsetTop;
+      const sectionBottom = sectionTop + section.offsetHeight;
+      
+      if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        if (navLinks[index]) {
+          navLinks[index].classList.add('active');
+        }
+      }
+    });
+  }
+
+  // Listen for scroll events
+  window.addEventListener('scroll', updateActiveLink);
+  
+  // Initial setup
+  updateActiveLink();
+}
+
+// Initialize side navigation when DOM is loaded
+document.addEventListener('DOMContentLoaded', initSideNavigation);
