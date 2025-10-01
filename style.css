@@ -147,6 +147,7 @@ nav a:hover, nav button:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
+/* Apply underline to main nav links on hover */
 nav a:hover::after, nav button:hover::after {
   content: '';
   position: absolute;
@@ -1607,12 +1608,12 @@ body {
   justify-content: center;
   padding: 1rem;
   cursor: pointer;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
   transition: all 0.3s ease;
 }
 
 .nav-toggle:hover {
-  background: var(--muted-surface);
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
 }
 
 .nav-toggle span {
@@ -1629,6 +1630,7 @@ body {
 .side-navigation.expanded .toggle-arrow {
   transform: rotate(90deg);
 }
+
 
 .nav-list {
   list-style: none;
