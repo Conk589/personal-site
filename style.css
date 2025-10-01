@@ -1596,6 +1596,12 @@ body {
 
 .side-navigation.collapsed {
   width: 60px;
+  cursor: pointer;
+}
+
+.side-navigation.collapsed:hover {
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
 }
 
 .side-navigation.expanded {
@@ -1611,10 +1617,6 @@ body {
   transition: all 0.3s ease;
 }
 
-.nav-toggle:hover {
-  background: rgba(255,255,255,0.1);
-  border-radius: 12px;
-}
 
 .nav-toggle span {
   display: none;

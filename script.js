@@ -267,10 +267,21 @@ function initSideNavigation() {
   // Start collapsed
   sideNav.classList.add('collapsed');
   
-  // Toggle expand/collapse
-  navToggle.addEventListener('click', () => {
-    sideNav.classList.toggle('collapsed');
-    sideNav.classList.toggle('expanded');
+  // Toggle expand/collapse - make entire collapsed nav clickable
+  sideNav.addEventListener('click', () => {
+    if (sideNav.classList.contains('collapsed')) {
+      sideNav.classList.toggle('collapsed');
+      sideNav.classList.toggle('expanded');
+    }
+  });
+  
+  // Also keep the nav-toggle clickable when expanded
+  navToggle.addEventListener('click', (e) => {
+    if (sideNav.classList.contains('expanded')) {
+      e.stopPropagation();
+      sideNav.classList.toggle('collapsed');
+      sideNav.classList.toggle('expanded');
+    }
   });
 
   // Handle navigation clicks
